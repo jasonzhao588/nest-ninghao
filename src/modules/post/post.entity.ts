@@ -14,7 +14,13 @@ export class Post {
   @Column()
   title: string;
 
-  @Column('longtext')
+  @Column({ nullable: true })
+  description: string;
+
+  @Column()
+  author: string;
+
+  @Column('longtext', { nullable: true })
   body: string;
 
   @CreateDateColumn()
