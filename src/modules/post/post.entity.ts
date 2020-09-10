@@ -17,7 +17,7 @@ export class Post {
   @Column({ nullable: true })
   description: string;
 
-  @Column()
+  @Column({ nullable: true })
   author: string;
 
   @Column('longtext', { nullable: true })

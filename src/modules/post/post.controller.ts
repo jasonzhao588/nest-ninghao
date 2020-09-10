@@ -7,15 +7,18 @@ import {
   Param,
   Put,
   Delete,
+  UseGuards,
 } from '@nestjs/common';
 import { PostService } from './post.service';
 import { PostDto } from './post.dto';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('posts')
 export class PostController {
   constructor(private readonly postService: PostService) {}
 
   @Post()
+  // @UseGuards(AuthGuard())
   async store(@Body() data: PostDto) {
     return await this.postService.store(data);
   }
